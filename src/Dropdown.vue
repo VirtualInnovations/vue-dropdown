@@ -88,7 +88,7 @@ export default {
       return '100%';
     },
     _true_width(){
-      return this.$el.width;
+      return this.$el.offsetWidth;
     },
     cls() {
       let c = {
