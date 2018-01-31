@@ -1,5 +1,5 @@
 <template>
-<div class="hsy-dropdown" :class="cls" :style="{width: _width}">
+<div class="hsy-dropdown" ref="mainPane" :class="cls" :style="{width: _width}">
   <div class="selected" @click="autoShow" :style="{backgroundPosition: (_true_width - 18) + 'px, center'}">{{ selectedText }}</div>
   <transition name="fadeIn" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
     <div class="list" v-show="isShow" :style="{width: _width}">
@@ -47,7 +47,8 @@ export default {
     return {
       selected: [],
       isShow: false,
-      items: []
+      items: [],
+      mainEl:null
     }
   },
   props: {
@@ -88,7 +89,7 @@ export default {
       return '100%';
     },
     _true_width(){
-      return this.$el.offsetWidth;
+      return this.mainEl ? this.mainEl.offsetWidth : 150;
     },
     cls() {
       let c = {
@@ -152,7 +153,7 @@ export default {
           this.selected.pop()
           this.selected.push(item)
 
-          this.$emit('input', this.findSelected())
+          this.$emit('input', this.findSelected().map(d => d.value))
         }
         this.$nextTick(() => {
           this.isShow = false
@@ -176,15 +177,11 @@ export default {
       if (this.cbItemChanged !== EMPTY_FN) {
         this.cbItemChanged(item)
       }
-
-      this.$emit('input', this.selected)
+      this.$emit('input', this.selected.map(d => d.value))
     }
   },
-  updated() {
-    this.setupTitleIfNeeded()
-  },
   mounted() {
-    this.setupTitleIfNeeded()
+    this.mainEl = this.$refs.mainPane;
     document.addEventListener('click', this.autoHide, false)
   },
   destroyed() {
