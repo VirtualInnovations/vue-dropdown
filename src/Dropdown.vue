@@ -1,8 +1,8 @@
 <template>
-<div class="hsy-dropdown" :class="cls" :style="{width: width + 'px'}">
-  <div class="selected" @click="autoShow" :style="{backgroundPosition: (width - 18) + 'px, center'}">{{ selectedText }}</div>
+<div class="hsy-dropdown" :class="cls" :style="{width: _width}">
+  <div class="selected" @click="autoShow" :style="{backgroundPosition: (_true_width - 18) + 'px, center'}">{{ selectedText }}</div>
   <transition name="fadeIn" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-    <div class="list" v-show="isShow" :style="{width: fixListWidth ? width + 'px' : 'auto'}">
+    <div class="list" v-show="isShow" :style="{width: _width}">
       <div class="inner">
         <div class="item" v-if="!grouped" v-for="item in items" :data-title="item.label" @click="!multiple && itemClicked(item)" :class="{selected: item.selected}">
           {{ appendIdx(item) }}
@@ -68,16 +68,7 @@ export default {
       default: 'Please choose'
     },
     width: {
-      type: Number,
-      default: 120
-    },
-    fixListWidth: {
-      type: Boolean,
-      default: true
-    },
-    cbChanged: {
-      type: Function,
-      default: EMPTY_FN
+      default: '100%'
     },
     cbItemChanged: {
       type: Function,
@@ -89,6 +80,16 @@ export default {
     }
   },
   computed: {
+    _width(){
+      if (typeof this.width === 'string' || this.width instanceof String)
+        return this.width;
+      else if(typeof this.width === 'number')
+        return this.width + 'px';
+      return '100%';
+    },
+    _true_width(){
+      return this.$el.width;
+    },
     cls() {
       let c = {
         grouped: this.grouped,
@@ -128,9 +129,6 @@ export default {
     autoShow() {
       this.isShow = !this.isShow
     },
-    setupTitleIfNeeded() {
-      if (!this.fixListWidth) return
-    },
     autoHide(evt) {
       if (!this.$el.contains(evt.target)) {
         this.isShow = false
@@ -154,9 +152,7 @@ export default {
           this.selected.pop()
           this.selected.push(item)
 
-          if (this.cbChanged !== EMPTY_FN) {
-            this.cbChanged(this.findSelected())
-          }
+          this.$emit('input', this.findSelected())
         }
         this.$nextTick(() => {
           this.isShow = false
@@ -180,9 +176,8 @@ export default {
       if (this.cbItemChanged !== EMPTY_FN) {
         this.cbItemChanged(item)
       }
-      if (this.cbChanged !== EMPTY_FN) {
-        this.cbChanged(this.selected)
-      }
+
+      this.$emit('input', this.selected)
     }
   },
   updated() {
