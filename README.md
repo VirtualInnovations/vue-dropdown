@@ -2,6 +2,9 @@
 
 This is yet another vue dropdown component.
 
+Forked from https://github.com/hsiaosiyuan0/vue-dropdown
+
+
 ## Install
 
 Use npm to download code:

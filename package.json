@@ -1,8 +1,8 @@
 {
-  "name": "hsy-vue-dropdown",
-  "version": "0.0.5",
+  "name": "vl-vue-dropdown",
+  "version": "0.0.1",
   "description": "vue dropdown component.",
-  "author": "hsiaosiyuan0 <hsiaosiyuan0@outlook.com>",
+  "author": "Valter Lorran <valterlorran@hotmail.com>",
   "main": "lib/index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --config ./build/webpack.dev.config.js",
@@ -31,5 +31,21 @@
     "vue-template-compiler": "^2.1.10",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
-  }
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valterlorran/vue-dropdown.git"
+  },
+  "keywords": [
+    "vuejs",
+    "dropdown"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valterlorran/vue-dropdown/issues"
+  },
+  "homepage": "https://github.com/valterlorran/vue-dropdown#readme"
 }
