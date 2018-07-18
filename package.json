@@ -37,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/valterlorran/vue-dropdown.git"
+    "url": "git+https://github.com/VirtualInnovations/vue-dropdown.git"
   },
   "keywords": [
     "vuejs",
@@ -45,7 +45,7 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/valterlorran/vue-dropdown/issues"
+    "url": "https://github.com/VirtualInnovations/vue-dropdown/issues"
   },
-  "homepage": "https://github.com/valterlorran/vue-dropdown#readme"
+  "homepage": "https://github.com/VirtualInnovations/vue-dropdown#readme"
 }
