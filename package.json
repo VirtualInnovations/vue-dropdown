@@ -1,8 +1,8 @@
 {
-  "name": "vl-vue-dropdown",
+  "name": "vi-vue-dropdown",
   "version": "0.0.1",
   "description": "vue dropdown component.",
-  "author": "Valter Lorran <valterlorran@hotmail.com>",
+  "author": "Joao do Valle <joaodovalle@gmail.com>",
   "main": "lib/index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --config ./build/webpack.dev.config.js",
