@@ -333,4 +333,57 @@ export default {
 .hsy-dropdown .group .item {
   font-size: 1.2em;
 }
+
+.hsy-dropdown {
+	color: #6c757d;
+	font-size: 1rem;
+	height: calc(2.25rem + 2px);
+	border: 1px solid #434f5c;
+	border-radius: 3px;
+}
+
+.hsy-dropdown .selected {
+	height: calc(2.25rem + 2px);
+	color: white;
+	font-size: 0.95rem;
+	border: 0px none;
+	padding-top: 5px;
+	padding-left: 15px;
+	background: url('/assets/arrow.svg') no-repeat right;
+	background-color: #434f5c;
+}
+
+.hsy-dropdown .list .inner {
+	padding: 0px;
+}
+
+.hsy-dropdown.multiple .item {
+	background-color: #434f5c;
+	font-size: 0.8rem;
+	border: 0px none;
+	color: white;
+}
+
+.hsy-dropdown .list .inner {
+	background-color: #434f5c;
+	font-size: 0.8rem;
+	border: 0px none;
+	color: white;
+	width:300px;
+}
+
+.hsy-dropdown.multiple .item .selected {
+	background-color: #434f5c;
+	font-size: 0.8rem;
+	border: 0px none;
+	color: white;
+}
+
+.hsy-dropdown.multiple > .list .item:hover, .hsy-dropdown > .list .item:hover {
+	background-color: #c5c5c5;
+	font-size: 0.8rem;
+	border: 0px none;
+	color: white;
+	/*border-radius: 3px*/
+}
 </style>
