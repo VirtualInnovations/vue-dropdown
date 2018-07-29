@@ -191,5 +191,199 @@ export default {
 </script>
 
 <style>
+.hsy-dropdown {
+  font: 10px "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+  display: inline-block;
+  position: relative;
+}
 
+.hsy-dropdown>.selected {
+  height: 28px;
+  line-height: 28px;
+  border-radius: 3px;
+  border: 1px solid #B3C1D8;
+  font-size: 1.2em;
+  padding: 0 20px 0 10px;
+  color: #4C5565;
+  cursor: pointer;
+  background: url('assets/arrow.svg') no-repeat right center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hsy-dropdown>.list {
+  position: absolute;
+  top: 35px;
+  left: 0px;
+  font-size: 1.2em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-radius: 3px;
+  z-index: 100;
+}
+
+.hsy-dropdown>.list>.inner {
+  padding: 5px;
+}
+
+.hsy-dropdown>.list .item {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-position: 5px center;
+}
+
+.hsy-dropdown>.list .item:hover,
+.hsy-dropdown.multiple>.list .item:hover {
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+.hsy-dropdown>.list .item {
+  /*transition: all .35s ease-in-out;*/
+}
+
+.hsy-dropdown>.list .item.selected {
+  background: #7D8699 url('assets/right.svg') no-repeat 10px center;
+  border-radius: 3px;
+  color: #fff;
+  padding-left: 35px;
+}
+
+.hsy-dropdown .animated {
+  animation-duration: 0.35s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hsy-dropdown .fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.hsy-dropdown .fadeOut {
+  animation-name: fadeOut;
+}
+
+.hsy-dropdown.multiple .item {
+  color: #7D8699;
+  padding: 0 5px;
+}
+
+.hsy-dropdown.multiple .item.selected {
+  background: none;
+  padding: 0 5px;
+  color: #7D8699;
+}
+
+.hsy-dropdown.multiple .item input {
+  display: none;
+}
+
+.hsy-dropdown.multiple .item input+label {
+  display: block;
+  padding-left: 23px;
+  background: url('assets/chk.svg') no-repeat 0px center;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+}
+
+.hsy-dropdown.multiple .item input:checked+label {
+  background: url('assets/chked.svg') no-repeat 0px center;
+}
+
+.hsy-dropdown.multiple .item input:disabled+label {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.hsy-dropdown .group {
+  font-size: 10px;
+}
+
+.hsy-dropdown .group h3 {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding-left: 5px;
+  cursor: default;
+}
+
+.hsy-dropdown .group .item {
+  font-size: 1.2em;
+}
+
+.hsy-dropdown {
+	color: #6c757d;
+	font-size: 1rem;
+	height: calc(2.25rem + 2px);
+	border: 1px solid #434f5c;
+	border-radius: 3px;
+}
+
+.hsy-dropdown .selected {
+	height: calc(2.25rem + 2px);
+	color: white;
+	font-size: 0.95rem;
+	border: 0px none;
+	padding-top: 5px;
+	padding-left: 15px;
+	background: url('/assets/arrow.svg') no-repeat right;
+	background-color: #434f5c;
+}
+
+.hsy-dropdown .list .inner {
+	padding: 0px;
+}
+
+.hsy-dropdown.multiple .item {
+	background-color: #434f5c;
+	font-size: 0.8rem;
+	border: 0px none;
+	color: white;
+}
+
+.hsy-dropdown .list .inner {
+	background-color: #434f5c;
+	font-size: 0.8rem;
+	border: 0px none;
+	color: white;
+	width:300px;
+}
+
+.hsy-dropdown.multiple .item .selected {
+	background-color: #434f5c;
+	font-size: 0.8rem;
+	border: 0px none;
+	color: white;
+}
+
+.hsy-dropdown.multiple > .list .item:hover, .hsy-dropdown > .list .item:hover {
+	background-color: #c5c5c5;
+	font-size: 0.8rem;
+	border: 0px none;
+	color: white;
+	/*border-radius: 3px*/
+}
 </style>
