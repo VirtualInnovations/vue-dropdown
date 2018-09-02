@@ -218,7 +218,7 @@ export default {
   left: 0px;
   font-size: 1.2em;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  background: #fff;
+  background: #434f5c;
   border-radius: 3px;
   z-index: 100;
 }
