@@ -1,6 +1,6 @@
 {
   "name": "vi-vue-dropdown",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "vue dropdown component.",
   "author": "Joao do Valle <joaodovalle@gmail.com>",
   "main": "lib/index.js",
